@@ -41,7 +41,6 @@
     position: fixed;
     top: 0;
     width: 100%;
-    opacity: 0.8;
     visibility: hidden;
     display: flex;
 
@@ -62,10 +61,14 @@
     &-nav {
         margin: 0;
         padding: 0;
-        background: darken($primary-color, 5);
         list-style: none;
         transform: translate(0, -100%);
         @include easeOut;
+
+        &:before {
+            @include overlay;
+            background: darken($primary-color, 5);
+        }
 
         &.show {
             transform: translate(0, 0);
@@ -73,9 +76,13 @@
     }
 
     &-branding {
-        background: $primary-color;
         transform: translate(0, 100%);
         @include easeOut;
+
+        &:before {
+            @include overlay;
+            background: $primary-color;
+        }
 
         &.show {
             transform: translate(0, 0);
