@@ -1,5 +1,6 @@
 @import "config";
 @import "menu";
+@import "button";
 
 
 * {
@@ -131,6 +132,18 @@ main {
             transform: translate(0, -5px);
             box-shadow: 0px 20px 8px -10px rgba(0,0,0,0.25);            @include easeOut;
         }
+    }
+
+    .btn-dark {
+        @extend .btn;
+        background: darken($primary-color, 50);
+        color: #fff;
+    }
+
+    .btn-light {
+        @extend .btn;
+        background: lighten($primary-color, 50);
+        color: #333;
     }
 }
 
